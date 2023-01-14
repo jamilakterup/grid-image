@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout</title>
+    <style>
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .row {
+            margin-bottom: 5px;
+        }
+
+        .second-row,
+        .third-row {
+            display: flex;
+            gap: 5px;
+        }
+
+        .second-row>div,
+        .third-row>div {
+            flex: 1;
+        }
+
+        .second-row-third-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .second-row-third-container div {
+            height: calc(50% - 5px/2);
+        }
+
+        .tiger-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .second-row,
+            .third-row {
+                flex-direction: column;
+            }
+
+            .tiger-row {
+                grid-template-columns: repeat(1, 1fr)
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .row {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Com flex images</h2>
+        <hr>
+    </header>
+    <main>
+        <section class="row">
+            <img src="images/A.jpg" alt="">
+        </section>
+        <section class="row second-row">
+            <div>
+                <img src="images/B.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/C.jpg" alt="">
+            </div>
+            <div class="second-row-third-container">
+                <div>
+                    <img src="images/D.jpg" alt="">
+                </div>
+                <div>
+                    <img src="images/E.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="row third-row">
+            <div>
+                <img src="images/F.jpg" alt="">
+            </div>
+            <div class="tiger-row">
+                <div>
+                    <img src="images/G.jpg" alt="">
+                </div>
+                <div>
+                    <img src="images/G.jpg" alt="">
+                </div>
+                <div>
+                    <img src="images/G.jpg" alt="">
+                </div>
+                <div>
+                    <img src="images/G.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <img src="images/I.jpg" alt="">
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
